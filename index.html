@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="assets/img/Logo pet.svg" /> <!-- Consider replacing this with a new logo icon -->
+<title>HomeGrove - Your Guide to Home Decor & Gardening</title>
+<meta name="description" content="Discover expert tips, inspiration, and resources for home decoration and gardening. HomeGrove helps you create a beautiful and vibrant living space." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Fresh Pet Care Color Palette */
+    --primary: #4a9f8e;
+    --primary-dark: #3a7f70;
+    --primary-light: #e0f2ef;
+    --secondary: #ff9a76;
+    --accent: #6bbf8a;
+    --light: #f8fbfa;
+    --dark: #2d3748;
+    --gray: #718096;
+    --light-gray: #edf2f7;
+    --border: #e2e8f0;
+    
+    /* Typography */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    
+    /* Spacing */
+    --section-padding: 5rem 0;
+    --container-max-width: 1200px;
+    --border-radius: 12px;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Base Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+    color: var(--gray);
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: all 0.3s ease;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .section {
+    padding: var(--section-padding);
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  /* Navigation */
+  .nav {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .logo-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  
+  .menu {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .menu a {
+    color: var(--dark);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+  
+  .menu a.active {
+    color: var(--primary);
+  }
+  
+  .menu a.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+  }
+  
+  .menu a:hover {
+    color: var(--primary);
+  }
+  
+  .right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .btn.ghost {
+    background-color: transparent;
+    color: var(--primary);
+  }
+  
+  .btn.ghost:hover {
+    background-color: rgba(74, 159, 142, 0.1);
+  }
+  
+  .nav-toggle {
+    display: none;
+  }
+  
+  /* Hero Section */
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-light) 0%, #e8f7f4 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%234a9f8e" opacity="0.1"><path d="M20,20 Q40,5 60,20 T100,20 V80 Q80,95 60,80 T20,80 Z"/></svg>') no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+  }
+  
+  .hero .grid {
+    align-items: center;
+  }
+  
+  .badge {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--dark);
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: var(--gray);
+  }
+  
+  .kudos {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .pill {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .stat {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .stat .n {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+  }
+  
+  .stat .t {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-top: 0.5rem;
+  }
+  
+  /* Features Section */
+  .fe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .fe {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .fe h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  
+  .fe-icon {
+    background-color: var(--primary-light);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--primary);
+    font-size: 1.75rem;
+  }
+  
+  /* Pet Types Section */
+  .pet-types {
+    background-color: var(--light-gray);
+  }
+  
+  .pet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .pet-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  .pet-image {
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 3rem;
+  }
+  
+  .pet-info {
+    padding: 1.5rem;
+  }
+  
+  .pet-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .pet-info p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .pet-traits {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .trait {
+    background-color: var(--light-gray);
+    color: var(--dark);
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  /* Tips Section */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .tip-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+  }
+  
+  .tip-image {
+    height: 180px;
+    overflow: hidden;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 2.5rem;
+  }
+  
+  .tip-content {
+    padding: 1.5rem;
+  }
+  
+  .tip-content h3 {
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+  }
+  
+  .tip-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tip-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.875rem;
+    color: var(--gray);
+  }
+  
+  .read-more {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  /* Emergency Section */
+  .emergency {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    text-align: center;
+  }
+  
+  .emergency h2 {
+    color: white;
+  }
+  
+  .emergency p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
+  .emergency-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .emergency-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: left;
+  }
+  
+  .emergency-card h3 {
+    color: white;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .emergency-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* CTA Section */
+  .cta {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, var(--primary-light) 0%, #e0f2ef 100%);
+    border-radius: var(--border-radius);
+  }
+  
+  .cta h2 {
+    color: var(--dark);
+  }
+  
+  .cta p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  /* Contact Form */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 159, 142, 0.1);
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 3rem 0;
+  }
+  
+  .footer .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-logo img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .footer-logo-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .footer-about {
+    max-width: 400px;
+  }
+  
+  .footer-about p {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .footer-links h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-links a:hover {
+    color: white;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+    }
+    
+    .hero .grid {
+      grid-template-columns: 2fr 1fr;
+    }
+    
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer .container {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      flex-direction: column;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .menu.active {
+      display: flex;
+    }
+    
+    .nav-toggle {
+      display: block;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="Home">
+      <img src="assets/img/Logo pet.svg" alt="HomeGrove Logo">
+      <span class="logo-text">HomeGrove</span>
+    </a>
+    <div class="menu" id="nav-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="dogs.html">Indoor Plants</a>
+      <a href="cats.html">Outdoor Gardening</a>
+      <a href="nutrition.html">DIY Decor</a>
+      <a href="health.html">Room Makeovers</a>
+      <a href="training.html">Seasonal Decor</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="right">
+      <a class="btn ghost nav-toggle" id="nav-toggle">Menu</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container grid">
+    <div>
+      <div class="badge">Expert Guides • DIY Projects • Beautiful Homes</div>
+      <h1>Create Your Dream Living Space</h1>
+      <p>Explore a world of inspiration for home decoration and gardening. Get expert advice and step-by-step guides to beautify your home, inside and out.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom: 1.5rem;">
+        <a class="btn" href="#tips">Get Started</a>
+        <a class="btn ghost" href="#emergency">Explore Ideas</a>
+      </div>
+      <div class="kudos">
+        <span class="pill">🌿 Indoor Plants</span>
+        <span class="pill">🌸 Garden Design</span>
+        <span class="pill">🛋️ Interior Decor</span>
+        <span class="pill">🎨 DIY Projects</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="grid-2">
+        <div class="stat">
+          <div class="n">1000+</div>
+          <div class="t">Decor Ideas</div>
+        </div>
+        <div class="stat">
+          <div class="n">500+</div>
+          <div class="t">Plant Guides</div>
+        </div>
+        <div class="stat">
+          <div class="n">200+</div>
+          <div class="t">DIY Projects</div>
+        </div>
+        <div class="stat">
+          <div class="n">98%</div>
+          <div class="t">User Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section container">
+  <h2>Discover Your Next Home Project</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Whether you have a green thumb or a passion for design, HomeGrove provides the inspiration and guidance you need for your next project.</p>
+  <div class="fe-grid">
+    <div class="card fe">
+      <div class="fe-icon">🌿</div>
+      <h3>Indoor Plants</h3>
+      <p>Bring nature indoors. Find the perfect houseplants for your space and learn how to care for them.</p>
+      <a href="dogs.html" class="read-more">Explore Plant Guides →</a>
+    </div>
+    <div class="card fe">
+      <div class="fe-icon">🐈</div>
+      <h3>Outdoor Gardening</h3>
+      <p>Transform your backyard into a beautiful oasis. Get tips on landscape design, planting, and maintenance.</p>
+      <a href="cats.html" class="read-more">Start Your Garden →</a>
+    </div>
+    <div class="card fe">
+      <div class="fe-icon">🥗</div>
+      <h3>DIY Decor</h3>
+      <p>Unleash your creativity with fun and easy do-it-yourself projects to personalize your home.</p>
+      <a href="nutrition.html" class="read-more">Find DIY Projects →</a>
+    </div>
+    <div class="card fe">
+      <div class="fe-icon">🏥</div>
+      <h3>Room Makeovers</h3>
+      <p>Get inspired to refresh any room in your house with our expert design tips and style guides.</p>
+      <a href="health.html" class="read-more">Get Makeover Ideas →</a>
+    </div>
+    <div class="card fe">
+      <div class="fe-icon">🎓</div>
+      <h3>Seasonal Decor</h3>
+      <p>Celebrate every season with our creative ideas for holiday and seasonal home decorations.</p>
+      <a href="training.html" class="read-more">View Seasonal Styles →</a>
+    </div>
+    <div class="card fe">
+      <div class="fe-icon">🐾</div>
+      <h3>More Inspiration</h3>
+      <p>Explore a wide range of topics including sustainable living, small space solutions, and home organization.</p>
+      <a href="other-pets.html" class="read-more">Explore More →</a>
+    </div>
+  </div>
+</section>
+
+<section id="tips" class="section container">
+  <h2>How HomeGrove Helps You</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Bringing your home decor and gardening ideas to life is simple with our easy-to-follow guides and resources.</p>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-image">🥘</div>
+      <div class="tip-content">
+        <h3>1. Find Inspiration</h3>
+        <p>Enter a topic you're interested in, like "low-light plants" or "living room ideas," to find curated guides.</p>
+        <div class="tip-meta">
+          <span>Step One</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-image">🚗</div>
+      <div class="tip-content">
+        <h3>2. Learn from Experts</h3>
+        <p>Read our detailed articles and watch tutorials to learn the skills you need for your next project.</p>
+        <div class="tip-meta">
+          <span>Step Two</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-image">🦷</div>
+      <div class="tip-content">
+        <h3>3. Plan Your Project</h3>
+        <p>Use our checklists and resource guides to gather the materials and tools you need to get started.</p>
+        <div class="tip-meta">
+          <span>Step Three</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-image">🧠</div>
+      <div class="tip-content">
+        <h3>4. Create & Enjoy</h3>
+        <p>Follow our step-by-step instructions to complete your project and enjoy your beautiful new space.</p>
+        <div class="tip-meta">
+          <span>Step Four</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-image">🐾</div>
+      <div class="tip-content">
+        <h3>5. Share Your Success</h3>
+        <p>Share photos of your completed project with our community to inspire others on their journey.</p>
+        <div class="tip-meta">
+          <span>Step Five</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-image">🌿</div>
+      <div class="tip-content">
+        <h3>The HomeGrove Promise</h3>
+        <p>We promise to provide high-quality, reliable information to help you succeed in all your home projects.</p>
+        <div class="tip-meta">
+          <span>Our Promise</span>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="blog.html" class="btn">Explore Our Blog</a>
+  </div>
+</section>
+
+<section id="emergency" class="section emergency">
+  <div class="container">
+    <h2>Quick Help & Troubleshooting</h2>
+    <p>Facing a decor dilemma or a gardening problem? Find quick solutions to common challenges.</p>
+    <div class="emergency-cards">
+      <div class="emergency-card">
+        <h3>🚨 Plant SOS</h3>
+        <p>Identify and solve common houseplant problems like yellowing leaves, pests, and root rot with our guide.</p>
+      </div>
+      <div class="emergency-card">
+        <h3>💔 DIY Mishaps</h3>
+        <p>Made a mistake during a DIY project? Find simple fixes for common errors in painting, assembly, and more.</p>
+      </div>
+      <div class="emergency-card">
+        <h3>🩹 Stain Removal</h3>
+        <p>Our guide to removing common household stains from furniture, carpets, and other surfaces.</p>
+      </div>
+      <div class="emergency-card">
+        <h3>🌡️ Garden Pests</h3>
+        <p>Learn how to identify and naturally eliminate common garden pests to protect your plants.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="emergency-guide.html" class="btn ghost" style="border-color: white; color: white;">View Our Troubleshooting Guides</a>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="cta">
+    <h2>Join the HomeGrove Newsletter</h2>
+    <p>Get the latest home decor trends, gardening tips, and exclusive DIY projects delivered straight to your inbox. Sign up for free!</p>
+    <form id="newsletter-form" style="max-width: 500px; margin: 0 auto;">
+      <div class="form-row">
+        <div>
+          <input type="text" placeholder="Your Name" aria-label="Your Name" required>
+        </div>
+        <div>
+          <input type="email" placeholder="Your Email" aria-label="Your Email" required>
+        </div>
+      </div>
+      <div style="height: 1rem"></div>
+      <div>
+        <select aria-label="Pet Type" required>
+          <option value="" disabled selected>Select Your Interest</option>
+          <option value="decor">Home Decoration</option>
+          <option value="gardening">Gardening</option>
+          <option value="diy">DIY Projects</option>
+          <option value="all">All Topics</option>
+        </select>
+      </div>
+      <div style="height: 1.5rem"></div>
+      <button class="btn" type="submit">Subscribe Now</button>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="section container">
+  <h2>Contact HomeGrove</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Have a question, a suggestion for an article, or want to collaborate? We'd love to hear from you!</p>
+  <div class="card" style="max-width: 800px; margin: 0 auto;">
+    <form id="contact-form">
+      <div class="form-row">
+        <div>
+          <label for="contact-name">Your Name</label>
+          <input id="contact-name" name="name" required placeholder="Alex Johnson" aria-label="Name">
+        </div>
+        <div>
+          <label for="contact-email">Email Address</label>
+          <input id="contact-email" name="email" required type="email" placeholder="alex@example.com" aria-label="Email">
+        </div>
+      </div>
+      <div style="height: 1rem"></div>
+      <div>
+        <label for="contact-pet">Inquiry Type</label>
+        <select id="contact-pet" name="inquiry-type" aria-label="Inquiry Type" required>
+          <option value="" disabled selected>Select Inquiry Type</option>
+          <option value="question">General Question</option>
+          <option value="suggestion">Article Suggestion</option>
+          <option value="collaboration">Collaboration</option>
+          <option value="technical">Website Issue</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div style="height: 1rem"></div>
+      <div>
+        <label for="contact-subject">Subject</label>
+        <input id="contact-subject" name="subject" placeholder="e.g., Question about booking #12345" aria-label="Subject">
+      </div>
+      <div style="height: 1rem"></div>
+      <div>
+        <label for="contact-message">Your Message</label>
+        <textarea id="contact-message" name="message" rows="5" placeholder="Please describe your inquiry in detail..." aria-label="Message"></textarea>
+      </div>
+      <div style="height: 1.5rem"></div>
+      <button class="btn" type="submit">Send Question</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/img/Logo pet.svg" alt="HomeGrove Logo">
+          <span class="footer-logo-text">HomeGrove</span>
+        </div>
+        <div class="footer-about">
+          <p>Your trusted resource for home decoration and gardening inspiration. Helping you create a beautiful home since 2024.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.7-3.062-1.745-.614-1.045-.614-2.34 0-3.385.614-1.045 1.765-1.745 3.062-1.745s2.448.7 3.062 1.745c.614 1.045.614 2.34 0 3.385-.614 1.045-1.765 1.745-3.062 1.745zm7.718 0c-1.297 0-2.448-.7-3.062-1.745-.614-1.045-.614-2.34 0-3.385.614-1.045 1.765-1.745 3.062-1.745s2.448.7 3.062 1.745c.614 1.045.614 2.34 0 3.385-.614 1.045-1.765 1.745-3.062 1.745z"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.016 10.016 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.543l-.047-.02z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-links">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="dogs.html">Indoor Plants</a></li>
+            <li><a href="cats.html">Outdoor Gardening</a></li>
+            <li><a href="nutrition.html">DIY Decor</a></li>
+            <li><a href="health.html">Room Makeovers</a></li>
+            <li><a href="training.html">Seasonal Decor</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="emergency-guide.html">Project Guides</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="tools.html">Tools & Calculators</a></li>
+            <li><a href="veterinarians.html">Submit an Idea</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="experts.html">Our Contributors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 HomeGrove. All rights reserved. The information provided on this website is for informational purposes only and is intended for a general audience. Please consult with a professional for specific advice.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile Navigation Toggle
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    document.getElementById('nav-menu').classList.toggle('active');
+  });
+  
+  // Contact Form Submission
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! Our team will review it and respond shortly.');
+    this.reset();
+  });
+  
+  // Newsletter Form Submission
+  document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for subscribing! Look for our welcome email in your inbox shortly.');
+    this.reset();
+  });
+</script>
+</body>
+</html>
